@@ -1,5 +1,5 @@
 .catalog {
-  padding-top: 48px;
+  padding: 48px 64px 0;
   display: flex;
   gap: 64px;
 }

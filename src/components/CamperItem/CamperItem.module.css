@@ -52,6 +52,11 @@
   font-weight: 400;
 }
 
+.rating {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
 .star {
   fill: #ffc531;
 }
