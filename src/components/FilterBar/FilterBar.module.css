@@ -1,0 +1,89 @@
+.sidebar {
+  width: 360px;
+}
+
+.label {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  color: #6c717b;
+}
+
+.icon {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.input {
+  border-radius: 12px;
+  padding-left: 48px;
+  height: 56px;
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.title {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #475467;
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.checkboxWrap,
+.radioWrap {
+  padding-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  border-top: 1px solid #dadde1;
+}
+
+.radioWrap {
+  margin-bottom: 40px;
+}
+
+.checkboxLabel,
+.radioLabel {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 112px;
+  height: 96px;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.active {
+  border-color: #e44848;
+}
+
+.btn {
+  background-color: #e44848;
+  border-radius: 200px;
+  color: #fff;
+  min-width: 166px;
+  height: 56px;
+  transition: background-color 250ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: #d84343;
+  }
+}

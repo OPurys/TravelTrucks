@@ -29,7 +29,14 @@ p {
   margin: 0;
 }
 
+a,
+button,
+input {
+  outline: none;
+}
+
 button {
+  border: none;
   cursor: pointer;
 }
 
