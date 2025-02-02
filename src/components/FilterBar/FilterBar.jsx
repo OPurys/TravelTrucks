@@ -19,7 +19,12 @@ const FilterBar = () => {
           <label className={css.label}>
             Location
             <Icon className={css.icon} id="map" w={20} h={20} />
-            <Field className={css.input} name="location" placeholder="City" />
+            <Field
+              className={css.input}
+              type="text"
+              name="location"
+              placeholder="City"
+            />
           </label>
 
           <h2 className={css.title}>Filters</h2>

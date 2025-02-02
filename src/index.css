@@ -10,6 +10,7 @@
 a {
   color: currentColor;
   text-decoration: none;
+  outline: none;
 }
 
 ul,
@@ -29,14 +30,14 @@ p {
   margin: 0;
 }
 
-a,
 button,
-input {
+input,
+textarea {
   outline: none;
+  border: none;
 }
 
 button {
-  border: none;
   cursor: pointer;
 }
 

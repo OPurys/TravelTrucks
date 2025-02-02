@@ -1,0 +1,45 @@
+.wrapper {
+  border-radius: 10px;
+  padding: 44px 52px;
+  width: 631px;
+  height: 588px;
+  background-color: #f7f7f7;
+}
+
+.badgesList {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 48px;
+  background-color: #f2f4f7;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.detailsList {
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid #dadde1;
+}
+
+.detailsItem {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,33 @@
+.reviewsList {
+  width: 595px;
+}
+
+.reviewsItem:not(:last-child) {
+  margin-bottom: 44px;
+}
+
+.wrapperTop {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.name {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.star {
+  fill: #ffc531;
+}
+
+.text {
+  font-weight: 400;
+  color: #475467;
+}
