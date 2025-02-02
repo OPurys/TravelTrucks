@@ -5,8 +5,18 @@
   flex-direction: column;
   justify-content: center;
   color: #f7f7f7;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('../../assets/images/hero.jpg') no-repeat center/cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../../assets/images/hero.jpg');
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (-webkit-min-device-pixel-ratio: 2) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('../../assets/images/hero@2x.jpg');
+  }
 }
 
 .title {

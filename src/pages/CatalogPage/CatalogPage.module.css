@@ -1,6 +1,6 @@
 .catalog {
-  padding: 48px 64px 0;
+  padding: 48px 64px 52px;
   display: flex;
-  flex-direction: column;
-  gap: 64px;
+  flex-wrap: wrap;
+  column-gap: 64px;
 }

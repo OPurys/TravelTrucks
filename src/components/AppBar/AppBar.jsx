@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import css from './AppBar.module.css';
 import clsx from 'clsx';
@@ -9,14 +9,23 @@ const AppBar = () => {
   };
   return (
     <header className={css.wrapper}>
-      <Icon id="logo" w="136" h="17" />
       <nav className={css.nav}>
-        <NavLink className={buildLinkClass} to="/">
-          Home
-        </NavLink>
-        <NavLink className={buildLinkClass} to="/catalog">
-          Catalog
-        </NavLink>
+        <Link className={css.logoLink} to="/">
+          <Icon id="logo" w="136" h="17" />
+        </Link>
+
+        <ul className={css.linkList}>
+          <li>
+            <NavLink className={buildLinkClass} to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className={buildLinkClass} to="/catalog">
+              Catalog
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
