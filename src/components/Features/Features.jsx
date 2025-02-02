@@ -1,8 +1,13 @@
+import { useSelector } from 'react-redux';
+import { selectCamperDetails } from '../../redux/campers/selectors';
 import Icon from '../Icon/Icon';
 import css from './Features.module.css';
 
 const Features = () => {
   const test = ['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom', 'Petrol'];
+
+  const camper = useSelector(selectCamperDetails);
+
   return (
     <div className={css.wrapper}>
       <ul className={css.badgesList}>
@@ -19,27 +24,27 @@ const Features = () => {
       <ul className={css.detailsList}>
         <li className={css.detailsItem}>
           <p>Form</p>
-          <p>Panel truck</p>
+          <p>{camper?.form}</p>
         </li>
         <li className={css.detailsItem}>
           <p>Length</p>
-          <p>5.4 m</p>
+          <p>{camper?.length}</p>
         </li>
         <li className={css.detailsItem}>
           <p>Width</p>
-          <p>2.01 m</p>
+          <p>{camper?.width}</p>
         </li>
         <li className={css.detailsItem}>
           <p>Height</p>
-          <p>2.05 m</p>
+          <p>{camper?.height}</p>
         </li>
         <li className={css.detailsItem}>
           <p>Tank</p>
-          <p>132 I</p>
+          <p>{camper?.tank}</p>
         </li>
         <li className={css.detailsItem}>
           <p>Consumption</p>
-          <p>12.4l/100km</p>
+          <p>{camper?.consumption}</p>
         </li>
       </ul>
     </div>

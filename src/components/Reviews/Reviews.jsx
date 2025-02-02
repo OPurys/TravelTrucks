@@ -1,53 +1,32 @@
+import { useSelector } from 'react-redux';
 import Icon from '../Icon/Icon';
 import css from './Reviews.module.css';
+import { selectCamperDetails } from '../../redux/campers/selectors';
 
 const Reviews = () => {
+  const camper = useSelector(selectCamperDetails);
+
   return (
     <ul className={css.reviewsList}>
-      {/* {reviews?.map(review => ( */}
-      <li className={css.reviewsItem}>
-        <div className={css.wrapperTop}>
-          <img className={css.avatar} src="" alt="" width="60" height="60" />
-          <div className={css.innerWrap}>
-            <h2 className={css.name}>Alisa</h2>
-            <div className={css.starWrap}>
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
+      {camper?.reviews.map((review, i) => (
+        <li key={i} className={css.reviewsItem}>
+          <div className={css.wrapperTop}>
+            <div className={css.avatar}>{review.reviewer_name[0]}</div>
+            <div className={css.innerWrap}>
+              <h2 className={css.name}>{review.reviewer_name}</h2>
+              <div className={css.starWrap}>
+                <Icon className={css.star} id="star" w="16" h="16" />
+                <Icon className={css.star} id="star" w="16" h="16" />
+                <Icon className={css.star} id="star" w="16" h="16" />
+                <Icon className={css.star} id="star" w="16" h="16" />
+                <Icon className={css.star} id="star" w="16" h="16" />
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className={css.text}>
-          The Mavericks panel truck was a perfect choice for my solo road trip.
-          Compact, easy to drive, and had all the essentials. The kitchen
-          facilities were sufficient, and the overall experience was fantastic.
-        </p>
-      </li>
-      <li className={css.reviewsItem}>
-        <div className={css.wrapperTop}>
-          <img className={css.avatar} src="" alt="" width="60" height="60" />
-          <div className={css.innerWrap}>
-            <h2 className={css.name}>Alisa</h2>
-            <div className={css.starWrap}>
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-              <Icon className={css.star} id="star" w="16" h="16" />
-            </div>
-          </div>
-        </div>
-
-        <p className={css.text}>
-          The Mavericks panel truck was a perfect choice for my solo road trip.
-          Compact, easy to drive, and had all the essentials. The kitchen
-          facilities were sufficient, and the overall experience was fantastic.
-        </p>
-      </li>
-      {/* ))} */}
+          <p className={css.text}>{review.comment}</p>
+        </li>
+      ))}
     </ul>
   );
 };

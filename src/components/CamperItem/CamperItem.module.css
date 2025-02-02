@@ -5,7 +5,7 @@
   border-radius: 20px;
   padding: 24px;
   width: 888px;
-  height: 368px;
+  min-height: 368px;
 }
 
 .image {
@@ -20,7 +20,7 @@
 
 .wrapperTop {
   margin-bottom: 8px;
-  height: 32px;
+  min-height: 32px;
   display: flex;
   justify-content: space-between;
 }
