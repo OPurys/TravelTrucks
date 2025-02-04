@@ -38,13 +38,16 @@
   line-height: 1.33;
 }
 
+.model {
+  width: 350px;
+}
+
 .middleWrap {
   margin-bottom: 24px;
   display: flex;
   gap: 16px;
 }
 
-.rating,
 .location {
   display: flex;
   align-items: center;
@@ -52,9 +55,18 @@
   font-weight: 400;
 }
 
-.rating {
+.ratingLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 .star {
@@ -69,23 +81,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.badgesList {
-  margin-bottom: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 100px;
-  padding: 12px 18px;
-  height: 48px;
-  background-color: #f2f4f7;
 }
 
 .link {

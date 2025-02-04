@@ -15,11 +15,46 @@ const Reviews = () => {
             <div className={css.innerWrap}>
               <h2 className={css.name}>{review.reviewer_name}</h2>
               <div className={css.starWrap}>
-                <Icon className={css.star} id="star" w="16" h="16" />
-                <Icon className={css.star} id="star" w="16" h="16" />
-                <Icon className={css.star} id="star" w="16" h="16" />
-                <Icon className={css.star} id="star" w="16" h="16" />
-                <Icon className={css.star} id="star" w="16" h="16" />
+                <Icon
+                  className={
+                    review.reviewer_rating >= 1 ? css.yellow : css.star
+                  }
+                  id="star"
+                  w="16"
+                  h="16"
+                />
+                <Icon
+                  className={
+                    review.reviewer_rating >= 2 ? css.yellow : css.star
+                  }
+                  id="star"
+                  w="16"
+                  h="16"
+                />
+                <Icon
+                  className={
+                    review.reviewer_rating >= 3 ? css.yellow : css.star
+                  }
+                  id="star"
+                  w="16"
+                  h="16"
+                />
+                <Icon
+                  className={
+                    review.reviewer_rating >= 4 ? css.yellow : css.star
+                  }
+                  id="star"
+                  w="16"
+                  h="16"
+                />
+                <Icon
+                  className={
+                    review.reviewer_rating >= 5 ? css.yellow : css.star
+                  }
+                  id="star"
+                  w="16"
+                  h="16"
+                />
               </div>
             </div>
           </div>

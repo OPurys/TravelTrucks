@@ -15,13 +15,19 @@ const AboutCamper = ({ camper }) => {
           {camper?.location}
         </p>
       </div>
-      <p className={css.price}>€{camper?.price}.00</p>
+      <p className={css.price}>&#8364;{camper?.price}.00</p>
 
       <div className={css.gallery}>
-        <img className={css.image} src="" alt="" width="292" height="312" />
-        <img src="" alt="" width="292" height="312" />
-        <img src="" alt="" width="292" height="312" />
-        <img src="" alt="" width="292" height="312" />
+        {camper?.gallery.map((image, i) => (
+          <img
+            key={i}
+            className={css.image}
+            src={image.thumb}
+            alt={image.thumb}
+            width="292"
+            height="312"
+          />
+        ))}
       </div>
 
       <p className={css.description}>{camper?.description}</p>
