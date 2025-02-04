@@ -30,14 +30,21 @@ p {
   margin: 0;
 }
 
-button,
 input,
 textarea {
   outline: none;
-  border: none;
+  border: 1px solid transparent;
+  transition: border-color 250ms linear;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #d84343;
 }
 
 button {
+  border: none;
+  outline: none;
   cursor: pointer;
 }
 
