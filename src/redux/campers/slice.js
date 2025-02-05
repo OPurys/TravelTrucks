@@ -1,9 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchAllCampers, fetchCamper } from './operations';
 
 const initialState = {
   items: [],
   camperDetails: null,
+  currentPage: 1,
+  totalItems: 0,
   loading: false,
   error: null,
 };
@@ -11,33 +13,46 @@ const initialState = {
 const slice = createSlice({
   name: 'campers',
   initialState,
+  reducers: {
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
-      .addCase(fetchAllCampers.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
       .addCase(fetchAllCampers.fulfilled, (state, action) => {
-        state.loading = false;
-        state.items = action.payload.items;
-      })
-      .addCase(fetchAllCampers.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-      .addCase(fetchCamper.pending, state => {
-        state.loading = true;
-        state.error = null;
+        if (state.currentPage > 1) {
+          state.items = [...state.items, ...action.payload.items];
+        } else {
+          state.items = action.payload.items;
+        }
+        state.totalItems = action.payload.total;
       })
       .addCase(fetchCamper.fulfilled, (state, action) => {
-        state.loading = false;
         state.camperDetails = action.payload;
       })
-      .addCase(fetchCamper.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
+      .addMatcher(
+        isAnyOf(fetchAllCampers.pending, fetchCamper.pending),
+        state => {
+          state.loading = true;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(fetchAllCampers.fulfilled, fetchCamper.fulfilled),
+        state => {
+          state.loading = false;
+        }
+      )
+      .addMatcher(
+        isAnyOf(fetchAllCampers.rejected, fetchCamper.rejected),
+        (state, action) => {
+          state.loading = false;
+          state.error = action.payload;
+        }
+      );
   },
 });
 
+export const { setCurrentPage } = slice.actions;
 export default slice.reducer;

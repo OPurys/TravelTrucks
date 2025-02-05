@@ -6,12 +6,20 @@ import Tabs from '../../components/Tabs/Tabs';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCamper } from '../../redux/campers/operations';
 import { useEffect } from 'react';
-import { selectCamperDetails } from '../../redux/campers/selectors';
+import {
+  selectCamperDetails,
+  selectIsError,
+  selectIsLoading,
+} from '../../redux/campers/selectors';
+import Loader from '../../components/Loader/Loader';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const camper = useSelector(selectCamperDetails);
+  const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectIsError);
 
   useEffect(() => {
     dispatch(fetchCamper(id));
@@ -19,12 +27,19 @@ const DetailsPage = () => {
 
   return (
     <section className={css.details}>
-      <AboutCamper camper={camper} />
-      <Tabs />
-      <div className={css.wrapper}>
-        <Outlet />
-        <BookCamperForm />
-      </div>
+      {isLoading && <Loader />}
+      {isError && <ErrorMessage />}
+
+      {!isLoading && (
+        <>
+          <AboutCamper camper={camper} />
+          <Tabs />
+          <div className={css.wrapper}>
+            <Outlet />
+            <BookCamperForm />
+          </div>
+        </>
+      )}
     </section>
   );
 };
