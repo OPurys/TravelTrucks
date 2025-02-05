@@ -5,7 +5,7 @@ import BookCamperForm from '../../components/BookCamperForm/BookCamperForm';
 import Tabs from '../../components/Tabs/Tabs';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCamper } from '../../redux/campers/operations';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import {
   selectCamperDetails,
   selectIsError,
@@ -35,7 +35,9 @@ const DetailsPage = () => {
           <AboutCamper camper={camper} />
           <Tabs />
           <div className={css.wrapper}>
-            <Outlet />
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
             <BookCamperForm />
           </div>
         </>
