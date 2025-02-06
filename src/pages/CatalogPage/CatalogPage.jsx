@@ -38,6 +38,7 @@ const CatalogPage = () => {
 
   return (
     <section className={css.catalog}>
+      <h2 className="visually-hidden">Catalog</h2>
       <FilterBar />
 
       {isLoading && <Loader />}

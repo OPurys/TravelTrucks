@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-const slice = createSlice({
+const campersSlice = createSlice({
   name: 'campers',
   initialState,
   reducers: {
@@ -54,5 +54,5 @@ const slice = createSlice({
   },
 });
 
-export const { setCurrentPage } = slice.actions;
-export default slice.reducer;
+export const { setCurrentPage } = campersSlice.actions;
+export default campersSlice.reducer;

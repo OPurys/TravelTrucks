@@ -2,8 +2,18 @@ import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import css from './CamperItem.module.css';
 import VehiclesIcon from '../VehiclesIcon/VehiclesIcon';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFavorites } from '../../redux/favorites/slice';
+import { selectFavorites } from '../../redux/favorites/selectors';
 
 const CamperItem = ({ camper }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+
+  const handleClick = id => {
+    dispatch(setFavorites(id));
+  };
+
   return (
     <li className={css.item}>
       <img
@@ -18,7 +28,18 @@ const CamperItem = ({ camper }) => {
           <h2 className={css.model}>{camper.name}</h2>
           <div className={css.topInnerWrap}>
             <p className={css.price}>&#8364;{camper.price}.00</p>
-            <Icon id="heart" w="26" h="24" />
+            <button
+              className={css.btnIcon}
+              type="button"
+              onClick={() => handleClick(camper.id)}
+            >
+              <Icon
+                className={favorites.includes(camper.id) && css.iconHeart}
+                id="heart"
+                w="26"
+                h="24"
+              />
+            </button>
           </div>
         </div>
 

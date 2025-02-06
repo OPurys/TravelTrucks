@@ -99,3 +99,16 @@
     background-color: #d84343;
   }
 }
+
+.btnIcon {
+  transition: opacity 250ms linear;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.iconHeart {
+  fill: #e44848;
+}

@@ -3,7 +3,8 @@ import css from './NotFoundPage.module.css';
 
 const NotFoundPage = () => {
   return (
-    <div className={css.wrapper}>
+    <section className={css.notFound}>
+      <h2 className="visually-hidden">NotFound</h2>
       <img
         className={css.image}
         src="https://www.digitalmesh.com/blog/wp-content/uploads/2020/05/404-error.jpg"
@@ -12,7 +13,7 @@ const NotFoundPage = () => {
       <Link className={css.link} to="/catalog">
         Go Back
       </Link>
-    </div>
+    </section>
   );
 };
 export default NotFoundPage;

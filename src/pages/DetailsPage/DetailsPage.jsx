@@ -27,6 +27,7 @@ const DetailsPage = () => {
 
   return (
     <section className={css.details}>
+      <h2 className="visually-hidden">Details about the camper</h2>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
 
