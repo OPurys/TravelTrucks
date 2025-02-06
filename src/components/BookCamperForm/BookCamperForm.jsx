@@ -1,6 +1,6 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import css from './BookCamperForm.module.css';
-import bookCamperFormSchema from './BookCamperFormSchema';
+import bookCamperFormSchema from './bookCamperFormSchema';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
