@@ -13,6 +13,7 @@ import {
 } from '../../redux/campers/selectors';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const DetailsPage = () => {
 
   return (
     <section className={css.details}>
+      <DocumentTitle>Details</DocumentTitle>
       <h2 className="visually-hidden">Details about the camper</h2>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import css from './NotFoundPage.module.css';
+import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 
 const NotFoundPage = () => {
   return (
     <section className={css.notFound}>
+      <DocumentTitle>NotFound</DocumentTitle>
       <h2 className="visually-hidden">NotFound</h2>
       <img
         className={css.image}

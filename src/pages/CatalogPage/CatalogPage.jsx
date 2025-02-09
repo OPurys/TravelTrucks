@@ -17,6 +17,7 @@ import { setCurrentPage } from '../../redux/campers/slice';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { setScrollPosition } from '../../redux/scrollUp/slice';
+import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ const CatalogPage = () => {
 
   return (
     <section className={css.catalog}>
+      <DocumentTitle>Catalog</DocumentTitle>
       <h2 className="visually-hidden">Catalog</h2>
       <FilterBar />
       {isLoading && <Loader />}
