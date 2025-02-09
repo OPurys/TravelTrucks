@@ -1,4 +1,4 @@
-# TravelTrucks Web Application
+# TravelTrucks
 
 ## Project Description
 
@@ -32,20 +32,27 @@ The project is deployed on [Vercel](https://travel-trucks-lime.vercel.app/)
 
 ## Installation Instructions
 
-1. Clone the Repository
+### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/OPurys/TravelTrucks.git
 cd traveltrucks
-
-2. Install dependencies:
-npm install
-
-3.Start the development server:
-npm run dev
-
-Now the application will be available at [](http://localhost:5173).
 ```
+
+### 2. Install dependencies:
+
+```bash
+npm install
+```
+
+### 3. Start the development server:
+
+```bash
+npm run dev
+```
+
+Now the application will be available at:
+[http://localhost:5173](http://localhost:5173)
 
 ## How to Use
 
@@ -58,5 +65,5 @@ Now the application will be available at [](http://localhost:5173).
 ## Contacts
 
 **Project Author**: Oleh Purys  
-**Email**: [](olehpurys@gmail.com)  
-**GitHub**: [](https://github.com/OPurys)
+**Email**: [olehpurys@gmail.com](olehpurys@gmail.com)  
+**GitHub**: [https://github.com/OPurys](https://github.com/OPurys)
