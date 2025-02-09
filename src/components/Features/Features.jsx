@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
 import { selectCamperDetails } from '../../redux/campers/selectors';
 import css from './Features.module.css';
-import VehiclesIcon from '../VehiclesIcon/VehiclesIcon';
+import VehicleListIcons from '../VehicleListIcons/VehicleListIcons';
 
 const Features = () => {
   const camper = useSelector(selectCamperDetails);
 
   return (
     <div className={css.wrapper}>
-      <VehiclesIcon camper={camper} />
+      <VehicleListIcons camper={camper} />
 
       <div>
         <h2 className={css.title}>Vehicle details</h2>

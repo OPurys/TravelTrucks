@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import css from './CamperItem.module.css';
-import VehiclesIcon from '../VehiclesIcon/VehiclesIcon';
+import VehicleListIcons from '../VehicleListIcons/VehicleListIcons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFavorites } from '../../redux/favorites/slice';
 import { selectFavorites } from '../../redux/favorites/selectors';
@@ -61,7 +61,7 @@ const CamperItem = ({ camper }) => {
 
         <p className={css.description}>{camper.description}</p>
 
-        <VehiclesIcon camper={camper} />
+        <VehicleListIcons camper={camper} />
 
         <Link to={`/catalog/${camper.id}/features`} className={css.link}>
           Show more

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Container from './components/Container/Container';
 import { lazy, Suspense } from 'react';
 import Loader from './components/Loader/Loader';
+import BtnScrollUp from './components/BtnScrollUp/BtnScrollUp';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div>
       <Container>
+        <BtnScrollUp />
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Layout />}>

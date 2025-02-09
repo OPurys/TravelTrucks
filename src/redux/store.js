@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import campersReducer from './campers/slice';
 import favoritesReducer from './favorites/slice';
+import scrollReducer from './scrollUp/slice';
 import {
   persistStore,
   persistReducer,
@@ -23,6 +24,7 @@ export const store = configureStore({
   reducer: {
     campers: campersReducer,
     favorites: persistReducer(persistConfig, favoritesReducer),
+    scroll: scrollReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

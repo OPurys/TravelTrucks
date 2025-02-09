@@ -5,6 +5,7 @@ const initialState = {
   items: [],
   camperDetails: null,
   currentPage: 1,
+  params: '',
   totalItems: 0,
   loading: false,
   error: null,
@@ -17,15 +18,18 @@ const campersSlice = createSlice({
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
+    setParams: (state, action) => {
+      state.currentPage = initialState.currentPage;
+      state.params = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
       .addCase(fetchAllCampers.fulfilled, (state, action) => {
-        if (state.currentPage > 1) {
-          state.items = [...state.items, ...action.payload.items];
-        } else {
-          state.items = action.payload.items;
-        }
+        state.items =
+          state.currentPage > 1
+            ? [...state.items, ...action.payload.items]
+            : action.payload.items;
         state.totalItems = action.payload.total;
       })
       .addCase(fetchCamper.fulfilled, (state, action) => {
@@ -54,5 +58,5 @@ const campersSlice = createSlice({
   },
 });
 
-export const { setCurrentPage } = campersSlice.actions;
+export const { setCurrentPage, setParams } = campersSlice.actions;
 export default campersSlice.reducer;

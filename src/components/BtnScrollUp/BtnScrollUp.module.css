@@ -1,0 +1,23 @@
+.btnScrollUp {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #dadde1;
+  border-radius: 5px;
+  background-color: #e44848;
+  transition: opacity 250ms linear;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.iconArrowUp {
+  fill: #fff;
+}

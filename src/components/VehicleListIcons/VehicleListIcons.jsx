@@ -1,19 +1,19 @@
 import Icon from '../Icon/Icon';
-import css from './VehiclesIcon.module.css';
+import css from './VehicleListIcons.module.css';
 
-const VehiclesIcon = ({ camper }) => {
+const VehicleListIcons = ({ camper }) => {
   return (
     <ul className={css.iconsList}>
       {camper?.engine && (
         <li className={css.iconsItem}>
           <Icon id="petrol" w={20} h={20} />
-          Petrol
+          {camper.engine}
         </li>
       )}
       {camper?.transmission && (
         <li className={css.iconsItem}>
           <Icon id="automatic" w={20} h={20} />
-          Automatic
+          {camper.transmission}
         </li>
       )}
       {camper?.AC && (
@@ -74,4 +74,4 @@ const VehiclesIcon = ({ camper }) => {
   );
 };
 
-export default VehiclesIcon;
+export default VehicleListIcons;

@@ -10,18 +10,21 @@ import {
   selectCurrentPage,
   selectIsError,
   selectIsLoading,
+  selectParams,
   selectTotalItems,
 } from '../../redux/campers/selectors';
 import { setCurrentPage } from '../../redux/campers/slice';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import { setScrollPosition } from '../../redux/scrollUp/slice';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
 
+  const campers = useSelector(selectCampers);
   const currentPage = useSelector(selectCurrentPage);
   const totalItems = useSelector(selectTotalItems);
-  const campers = useSelector(selectCampers);
+  const params = useSelector(selectParams);
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
 
@@ -29,8 +32,17 @@ const CatalogPage = () => {
   const totalPages = Math.ceil(totalItems / limit);
 
   useEffect(() => {
-    dispatch(fetchAllCampers({ page: currentPage, limit }));
-  }, [dispatch, currentPage]);
+    dispatch(fetchAllCampers({ currentPage, params }));
+
+    const handleScroll = () => {
+      dispatch(setScrollPosition(window.scrollY));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [dispatch, currentPage, params]);
 
   const handlePageChange = page => {
     dispatch(setCurrentPage(page));
@@ -40,10 +52,11 @@ const CatalogPage = () => {
     <section className={css.catalog}>
       <h2 className="visually-hidden">Catalog</h2>
       <FilterBar />
-
       {isLoading && <Loader />}
-      {isError && <ErrorMessage />}
-
+      {isError && <ErrorMessage message="Something went wrong..." />}
+      {!campers.length && (
+        <ErrorMessage message="There are no data for the specified filters" />
+      )}
       {!isLoading && (
         <div>
           <CampersList campers={campers} />
