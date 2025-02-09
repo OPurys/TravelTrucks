@@ -54,7 +54,7 @@ const CatalogPage = () => {
       <FilterBar />
       {isLoading && <Loader />}
       {isError && <ErrorMessage message="Something went wrong..." />}
-      {!campers.length && (
+      {!isLoading && !isError && !campers.length && (
         <ErrorMessage message="There are no data for the specified filters" />
       )}
       {!isLoading && (
