@@ -27,7 +27,7 @@ const CamperItem = ({ camper }) => {
         <div className={css.wrapperTop}>
           <h2 className={css.model}>{camper.name}</h2>
           <div className={css.topInnerWrap}>
-            <p className={css.price}>&#8364;{camper.price}.00</p>
+            <p className={css.price}>&#8364;{camper.price.toFixed(2)}</p>
             <button
               className={css.btnIcon}
               type="button"
