@@ -33,7 +33,7 @@ const CatalogPage = () => {
   const totalPages = Math.ceil(totalItems / limit);
 
   useEffect(() => {
-    dispatch(fetchAllCampers({ currentPage, params }));
+    dispatch(fetchAllCampers({ page: currentPage, params }));
 
     const handleScroll = () => {
       dispatch(setScrollPosition(window.scrollY));
