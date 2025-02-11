@@ -195,9 +195,14 @@ const FilterBar = () => {
               </label>
             </div>
 
-            <button className={css.btn} type="submit">
-              Search
-            </button>
+            <div className={css.btnWrapper}>
+              <button className={`${css.btn} ${css.btnSubmit}`} type="submit">
+                Search
+              </button>
+              <button className={`${css.btn} ${css.btnReset}`} type="reset">
+                Reset
+              </button>
+            </div>
           </aside>
         </Form>
       )}

@@ -78,16 +78,34 @@
   border-color: #e44848;
 }
 
+.btnWrapper {
+  display: flex;
+  gap: 20px;
+}
+
 .btn {
   background-color: #e44848;
   border-radius: 200px;
   color: #fff;
   min-width: 166px;
   height: 56px;
-  transition: background-color 250ms linear;
+  transition: background-color 250ms linear, border-color 250ms linear;
+}
 
+.btnSubmit {
   &:hover,
   &:focus {
     background-color: #d84343;
+  }
+}
+
+.btnReset {
+  border: 1px solid #dadde1;
+  background-color: #fff;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    border-color: #d84343;
   }
 }
