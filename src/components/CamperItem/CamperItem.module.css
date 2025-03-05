@@ -4,18 +4,26 @@
   border: 1px solid #dadde1;
   border-radius: 20px;
   padding: 24px;
-  width: 888px;
+  max-width: 888px;
   min-height: 368px;
+
+  @media screen and (max-width: 1439px) {
+    display: block;
+  }
 }
 
 .image {
   border-radius: 10px;
+
+  @media screen and (max-width: 1439px) {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 
 .rightWrap {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .wrapperTop {
@@ -39,7 +47,7 @@
 }
 
 .model {
-  width: 350px;
+  max-width: 350px;
 }
 
 .middleWrap {
@@ -75,12 +83,16 @@
 
 .description {
   margin-bottom: 24px;
-  width: 463px;
+  max-width: 463px;
   font-weight: 400;
   color: #475467;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media screen and (max-width: 1439px) {
+    max-width: 590px;
+  }
 }
 
 .link {
@@ -93,6 +105,10 @@
   color: #fff;
   background-color: #e44848;
   transition: background-color 250ms linear;
+
+  @media screen and (max-width: 1439px) {
+    margin: 0 auto;
+  }
 
   &:hover,
   &:focus {

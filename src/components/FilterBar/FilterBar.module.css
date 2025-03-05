@@ -1,5 +1,11 @@
 .sidebar {
   width: 360px;
+
+  @media screen and (max-width: 1439px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .label {
@@ -10,6 +16,12 @@
   gap: 8px;
   font-weight: 400;
   color: #6c717b;
+
+  @media screen and (max-width: 1439px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .icon {
@@ -80,7 +92,14 @@
 
 .btnWrapper {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1439px) {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 15px;
+  }
 }
 
 .btn {

@@ -5,4 +5,9 @@
 .wrapper {
   display: flex;
   column-gap: 40px;
+
+  @media screen and (max-width: 1439px) {
+    flex-direction: column;
+    row-gap: 40px;
+  }
 }

@@ -56,143 +56,147 @@ const FilterBar = () => {
               />
             </label>
 
-            <h2 className={css.title}>Filters</h2>
-            <h3 className={css.subtitle}>Vehicle equipment</h3>
+            <div>
+              <h2 className={css.title}>Filters</h2>
+              <h3 className={css.subtitle}>Vehicle equipment</h3>
 
-            <div className={css.checkboxWrap}>
-              <label
-                className={
-                  values.equipment.includes('AC')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="checkbox"
-                  name="equipment"
-                  value="AC"
-                />
-                <Icon id="ac" w={32} h={32} />
-                AC
-              </label>
-              <label
-                className={
-                  values.equipment.includes('automatic')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="checkbox"
-                  name="equipment"
-                  value="automatic"
-                />
-                <Icon id="automatic" w={32} h={32} />
-                Automatic
-              </label>
-              <label
-                className={
-                  values.equipment.includes('kitchen')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="checkbox"
-                  name="equipment"
-                  value="kitchen"
-                />
-                <Icon id="kitchen" w={32} h={32} />
-                Kitchen
-              </label>
-              <label
-                className={
-                  values.equipment.includes('TV')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="checkbox"
-                  name="equipment"
-                  value="TV"
-                />
-                <Icon id="tv" w={32} h={32} />
-                TV
-              </label>
-              <label
-                className={
-                  values.equipment.includes('bathroom')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="checkbox"
-                  name="equipment"
-                  value="bathroom"
-                />
-                <Icon id="bathroom" w={32} h={32} />
-                Bathroom
-              </label>
+              <div className={css.checkboxWrap}>
+                <label
+                  className={
+                    values.equipment.includes('AC')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="checkbox"
+                    name="equipment"
+                    value="AC"
+                  />
+                  <Icon id="ac" w={32} h={32} />
+                  AC
+                </label>
+                <label
+                  className={
+                    values.equipment.includes('automatic')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="checkbox"
+                    name="equipment"
+                    value="automatic"
+                  />
+                  <Icon id="automatic" w={32} h={32} />
+                  Automatic
+                </label>
+                <label
+                  className={
+                    values.equipment.includes('kitchen')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="checkbox"
+                    name="equipment"
+                    value="kitchen"
+                  />
+                  <Icon id="kitchen" w={32} h={32} />
+                  Kitchen
+                </label>
+                <label
+                  className={
+                    values.equipment.includes('TV')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="checkbox"
+                    name="equipment"
+                    value="TV"
+                  />
+                  <Icon id="tv" w={32} h={32} />
+                  TV
+                </label>
+                <label
+                  className={
+                    values.equipment.includes('bathroom')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="checkbox"
+                    name="equipment"
+                    value="bathroom"
+                  />
+                  <Icon id="bathroom" w={32} h={32} />
+                  Bathroom
+                </label>
+              </div>
             </div>
 
-            <h3 className={css.subtitle}>Vehicle type</h3>
+            <div>
+              <h3 className={css.subtitle}>Vehicle type</h3>
 
-            <div className={css.radioWrap}>
-              <label
-                className={
-                  values.form.includes('panelTruck')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="radio"
-                  name="form"
-                  value="panelTruck"
-                />
-                <Icon id="van" w={32} h={32} />
-                Van
-              </label>
-              <label
-                className={
-                  values.form.includes('fullyIntegrated')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="radio"
-                  name="form"
-                  value="fullyIntegrated"
-                />
-                <Icon id="fully_integrated" w={32} h={32} />
-                Fully Integrated
-              </label>
-              <label
-                className={
-                  values.form.includes('alcove')
-                    ? `${css.checkboxLabel} ${css.active}`
-                    : css.checkboxLabel
-                }
-              >
-                <Field
-                  className="visually-hidden"
-                  type="radio"
-                  name="form"
-                  value="alcove"
-                />
-                <Icon id="alcove" w={32} h={32} />
-                Alcove
-              </label>
+              <div className={css.radioWrap}>
+                <label
+                  className={
+                    values.form.includes('panelTruck')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="radio"
+                    name="form"
+                    value="panelTruck"
+                  />
+                  <Icon id="van" w={32} h={32} />
+                  Van
+                </label>
+                <label
+                  className={
+                    values.form.includes('fullyIntegrated')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="radio"
+                    name="form"
+                    value="fullyIntegrated"
+                  />
+                  <Icon id="fully_integrated" w={32} h={32} />
+                  Fully Integrated
+                </label>
+                <label
+                  className={
+                    values.form.includes('alcove')
+                      ? `${css.checkboxLabel} ${css.active}`
+                      : css.checkboxLabel
+                  }
+                >
+                  <Field
+                    className="visually-hidden"
+                    type="radio"
+                    name="form"
+                    value="alcove"
+                  />
+                  <Icon id="alcove" w={32} h={32} />
+                  Alcove
+                </label>
+              </div>
             </div>
 
             <div className={css.btnWrapper}>

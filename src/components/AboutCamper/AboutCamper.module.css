@@ -41,10 +41,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
+
+  @media screen and (max-width: 1439px) {
+    gap: 15px;
+  }
 }
 
 .image {
   border-radius: 10px;
+
+  @media screen and (max-width: 1439px) {
+    width: 202px;
+    height: 222px;
+  }
 }
 
 .description {
