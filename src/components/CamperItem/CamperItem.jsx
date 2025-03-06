@@ -34,7 +34,9 @@ const CamperItem = ({ camper }) => {
               onClick={() => handleClick(camper.id)}
             >
               <Icon
-                className={favorites.includes(camper.id) && css.iconHeart}
+                className={
+                  favorites.includes(camper.id) ? css.isActive : css.iconHeart
+                }
                 id="heart"
                 w="26"
                 h="24"

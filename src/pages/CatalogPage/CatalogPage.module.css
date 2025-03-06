@@ -3,4 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 64px;
+
+  @media screen and (max-width: 767px) {
+    padding: 38px 50px 42px;
+  }
 }

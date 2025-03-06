@@ -1,6 +1,6 @@
 .hero {
   padding: 0 64px;
-  min-height: 665px;
+  min-height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,14 +8,19 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url('../../assets/images/hero.jpg');
   background-repeat: no-repeat;
-}
+  background-size: cover;
 
-@media screen and (min-resolution: 2dppx),
-  (min-resolution: 192dpi),
-  (-webkit-min-device-pixel-ratio: 2) {
-  .hero {
+  @media screen and (min-resolution: 2dppx),
+    (min-resolution: 192dpi),
+    (-webkit-min-device-pixel-ratio: 2) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url('../../assets/images/hero@2x.jpg');
+  }
+
+  @media screen and (max-width: 767px) {
+    min-height: calc(100vh - 95.8px);
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -24,6 +29,12 @@
   font-weight: 600;
   font-size: 48px;
   line-height: 0.67;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 32px;
+    font-size: 36px;
+    line-height: 1;
+  }
 }
 
 .subtext {
@@ -31,18 +42,28 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 42px;
+    font-size: 18px;
+  }
 }
 
 .link {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 200px;
+  border-radius: 12.5rem;
   width: 173px;
   height: 56px;
   color: #fff;
   background-color: #e44848;
   transition: background-color 250ms linear;
+
+  @media screen and (max-width: 767px) {
+    width: 133px;
+    height: 46px;
+  }
 
   &:hover,
   &:focus {

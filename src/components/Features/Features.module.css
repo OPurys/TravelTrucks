@@ -5,6 +5,10 @@
   border-radius: 10px;
   padding: 44px 52px;
   background-color: #f7f7f7;
+
+  @media screen and (max-width: 767px) {
+    padding: 24px 37px;
+  }
 }
 
 .title {
@@ -12,6 +16,11 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
 }
 
 .detailsList {
@@ -20,6 +29,10 @@
   flex-wrap: wrap;
   gap: 16px;
   border-top: 1px solid #dadde1;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
+  }
 }
 
 .detailsItem {

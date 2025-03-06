@@ -74,7 +74,7 @@ const FilterBar = () => {
                     name="equipment"
                     value="AC"
                   />
-                  <Icon id="ac" w={32} h={32} />
+                  <Icon className={css.optionIcon} id="ac" w={32} h={32} />
                   AC
                 </label>
                 <label
@@ -90,7 +90,12 @@ const FilterBar = () => {
                     name="equipment"
                     value="automatic"
                   />
-                  <Icon id="automatic" w={32} h={32} />
+                  <Icon
+                    className={css.optionIcon}
+                    id="automatic"
+                    w={32}
+                    h={32}
+                  />
                   Automatic
                 </label>
                 <label
@@ -106,7 +111,7 @@ const FilterBar = () => {
                     name="equipment"
                     value="kitchen"
                   />
-                  <Icon id="kitchen" w={32} h={32} />
+                  <Icon className={css.optionIcon} id="kitchen" w={32} h={32} />
                   Kitchen
                 </label>
                 <label
@@ -122,7 +127,7 @@ const FilterBar = () => {
                     name="equipment"
                     value="TV"
                   />
-                  <Icon id="tv" w={32} h={32} />
+                  <Icon className={css.optionIcon} id="tv" w={32} h={32} />
                   TV
                 </label>
                 <label
@@ -138,7 +143,12 @@ const FilterBar = () => {
                     name="equipment"
                     value="bathroom"
                   />
-                  <Icon id="bathroom" w={32} h={32} />
+                  <Icon
+                    className={css.optionIcon}
+                    id="bathroom"
+                    w={32}
+                    h={32}
+                  />
                   Bathroom
                 </label>
               </div>
@@ -161,7 +171,7 @@ const FilterBar = () => {
                     name="form"
                     value="panelTruck"
                   />
-                  <Icon id="van" w={32} h={32} />
+                  <Icon className={css.optionIcon} id="van" w={32} h={32} />
                   Van
                 </label>
                 <label
@@ -177,7 +187,12 @@ const FilterBar = () => {
                     name="form"
                     value="fullyIntegrated"
                   />
-                  <Icon id="fully_integrated" w={32} h={32} />
+                  <Icon
+                    className={css.optionIcon}
+                    id="fully_integrated"
+                    w={32}
+                    h={32}
+                  />
                   Fully Integrated
                 </label>
                 <label
@@ -193,7 +208,7 @@ const FilterBar = () => {
                     name="form"
                     value="alcove"
                   />
-                  <Icon id="alcove" w={32} h={32} />
+                  <Icon className={css.optionIcon} id="alcove" w={32} h={32} />
                   Alcove
                 </label>
               </div>

@@ -4,6 +4,12 @@
   display: flex;
   gap: 40px;
   border-bottom: 1px solid #dadde1;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    gap: 20px;
+  }
 }
 
 .link {
@@ -11,6 +17,10 @@
   font-size: 20px;
   line-height: 1.2;
   transition: opacity 250ms linear;
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
 
   &:hover,
   &:focus {
@@ -22,5 +32,9 @@
     text-decoration-color: #e44848;
     text-decoration-thickness: 5px;
     text-underline-offset: 28px;
+
+    @media screen and (max-width: 767px) {
+      text-underline-offset: 20px;
+    }
   }
 }

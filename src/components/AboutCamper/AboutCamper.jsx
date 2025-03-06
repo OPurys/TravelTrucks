@@ -3,7 +3,7 @@ import css from './AboutCamper.module.css';
 
 const AboutCamper = ({ camper }) => {
   return (
-    <div>
+    <div className={css.mainWrapper}>
       <h2 className={css.model}>{camper?.name}</h2>
       <div className={css.wrapperTop}>
         <p className={css.rating}>
