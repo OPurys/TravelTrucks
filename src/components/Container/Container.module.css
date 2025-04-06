@@ -1,12 +1,3 @@
 .container {
   margin: 0 auto;
-  max-width: 1440px;
-
-  @media screen and (max-width: 1439px) {
-    max-width: 768px;
-  }
-
-  @media screen and (max-width: 767px) {
-    max-width: 375px;
-  }
 }

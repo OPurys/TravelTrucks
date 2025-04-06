@@ -56,7 +56,7 @@ const FilterBar = () => {
               />
             </label>
 
-            <div>
+            <div className={css.equipWrap}>
               <h2 className={css.title}>Filters</h2>
               <h3 className={css.subtitle}>Vehicle equipment</h3>
 
@@ -154,7 +154,7 @@ const FilterBar = () => {
               </div>
             </div>
 
-            <div>
+            <div className={css.typeWrap}>
               <h3 className={css.subtitle}>Vehicle type</h3>
 
               <div className={css.radioWrap}>
