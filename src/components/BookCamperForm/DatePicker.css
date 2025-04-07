@@ -1,3 +1,7 @@
+.react-datepicker-wrapper {
+  display: block;
+}
+
 .react-datepicker {
   font-family: Inter, sans-serif;
   border-color: #475467;

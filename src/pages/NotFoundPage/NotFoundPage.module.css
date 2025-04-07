@@ -1,17 +1,13 @@
 .notFound {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .image {
   max-height: 90vh;
-  max-width: 60vw;
-
-  @media screen and (max-width: 767px) {
-    min-height: 90vh;
-    max-width: 100vw;
-  }
 }
 
 .link {
@@ -20,7 +16,7 @@
   color: #11489a;
 
   @media screen and (max-width: 767px) {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   &:hover,
