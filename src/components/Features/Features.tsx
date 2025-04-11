@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux';
 import { selectCamperDetails } from '../../redux/campers/selectors';
 import css from './Features.module.css';
 import VehicleListIcons from '../VehicleListIcons/VehicleListIcons';
+import { useAppSelector } from '../../redux/hooks';
 
 const Features = () => {
-  const camper = useSelector(selectCamperDetails);
+  const camper = useAppSelector(selectCamperDetails);
 
   return (
     <div className={css.wrapper}>
@@ -43,4 +43,5 @@ const Features = () => {
     </div>
   );
 };
+
 export default Features;

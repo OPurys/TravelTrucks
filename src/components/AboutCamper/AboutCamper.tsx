@@ -1,17 +1,22 @@
 import Icon from '../Icon/Icon';
 import css from './AboutCamper.module.css';
+import { Camper } from '../../../types/camper';
 
-const AboutCamper = ({ camper }) => {
+interface AboutCamperProps {
+  camper: Camper | null;
+}
+
+const AboutCamper = ({ camper }: AboutCamperProps) => {
   return (
     <div className={css.mainWrapper}>
       <h2 className={css.model}>{camper?.name}</h2>
       <div className={css.wrapperTop}>
         <p className={css.rating}>
-          <Icon className={css.star} id="star" w="16" h="16" />
+          <Icon className={css.star} id="star" w={16} h={16} />
           {camper?.rating}({camper?.reviews.length} Reviews)
         </p>
         <p className={css.location}>
-          <Icon id="map" w="16" h="16" />
+          <Icon id="map" w={16} h={16} />
           {camper?.location}
         </p>
       </div>

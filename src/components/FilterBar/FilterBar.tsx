@@ -1,19 +1,25 @@
 import { Field, Form, Formik } from 'formik';
 import css from './FilterBar.module.css';
 import Icon from '../Icon/Icon';
-import { useDispatch } from 'react-redux';
 import { setParams } from '../../redux/campers/slice.js';
+import { useAppDispatch } from '../../redux/hooks';
+
+interface FilterFormValues {
+  location: string;
+  equipment: string[];
+  form: string;
+}
 
 const FilterBar = () => {
-  const initialValues = {
+  const dispatch = useAppDispatch();
+
+  const initialValues: FilterFormValues = {
     location: '',
     equipment: [],
     form: '',
   };
 
-  const dispatch = useDispatch();
-
-  const handleSubmit = values => {
+  const handleSubmit = (values: FilterFormValues): void => {
     const params = new URLSearchParams();
 
     if (values.equipment.length) {
@@ -21,7 +27,7 @@ const FilterBar = () => {
         if (item === 'automatic') {
           params.append('transmission', item);
         } else {
-          params.append(item, true);
+          params.append(item, 'true');
         }
       });
     }

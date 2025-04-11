@@ -1,20 +1,24 @@
-import { Field, Form, Formik, ErrorMessage } from 'formik';
+import { Field, Form, Formik, ErrorMessage, FormikHelpers } from 'formik';
 import css from './BookCamperForm.module.css';
 import bookCamperFormSchema from './bookCamperFormSchema';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
 import toast from 'react-hot-toast';
+import { FormValues } from '../../../types/formValues';
 
 const BookCamperForm = () => {
-  const initialValues = {
+  const initialValues: FormValues = {
     name: '',
     email: '',
     bookingDate: null,
     comment: '',
   };
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (
+    values: FormValues,
+    actions: FormikHelpers<FormValues>
+  ) => {
     toast.success('Form submitted successfully!');
     actions.resetForm();
   };

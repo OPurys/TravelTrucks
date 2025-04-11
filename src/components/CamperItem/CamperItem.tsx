@@ -2,15 +2,20 @@ import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import css from './CamperItem.module.css';
 import VehicleListIcons from '../VehicleListIcons/VehicleListIcons';
-import { useDispatch, useSelector } from 'react-redux';
 import { setFavorites } from '../../redux/favorites/slice';
 import { selectFavorites } from '../../redux/favorites/selectors';
+import { Camper } from '../../../types/camper';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
-const CamperItem = ({ camper }) => {
-  const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
+interface CamperItemProps {
+  camper: Camper;
+}
 
-  const handleClick = id => {
+const CamperItem = ({ camper }: CamperItemProps) => {
+  const dispatch = useAppDispatch();
+  const favorites = useAppSelector(selectFavorites);
+
+  const handleClick = (id: string): void => {
     dispatch(setFavorites(id));
   };
 
@@ -38,8 +43,8 @@ const CamperItem = ({ camper }) => {
                   favorites.includes(camper.id) ? css.isActive : css.iconHeart
                 }
                 id="heart"
-                w="26"
-                h="24"
+                w={26}
+                h={24}
               />
             </button>
           </div>
@@ -51,12 +56,12 @@ const CamperItem = ({ camper }) => {
               className={css.ratingLink}
               to={`/catalog/${camper.id}/reviews`}
             >
-              <Icon className={css.star} id="star" w="16" h="16" />
+              <Icon className={css.star} id="star" w={16} h={16} />
               {camper.rating}({camper.reviews.length} Reviews)
             </Link>
           </p>
           <p className={css.location}>
-            <Icon id="map" w="16" h="16" />
+            <Icon id="map" w={16} h={16} />
             {camper.location}
           </p>
         </div>

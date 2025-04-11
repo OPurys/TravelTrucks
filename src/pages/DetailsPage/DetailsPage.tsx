@@ -3,7 +3,6 @@ import css from './DetailsPage.module.css';
 import AboutCamper from '../../components/AboutCamper/AboutCamper';
 import BookCamperForm from '../../components/BookCamperForm/BookCamperForm';
 import Tabs from '../../components/Tabs/Tabs';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchCamper } from '../../redux/campers/operations';
 import { Suspense, useEffect } from 'react';
 import {
@@ -14,16 +13,19 @@ import {
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 const DetailsPage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { id } = useParams();
-  const camper = useSelector(selectCamperDetails);
-  const isLoading = useSelector(selectIsLoading);
-  const isError = useSelector(selectIsError);
+  const camper = useAppSelector(selectCamperDetails);
+  const isLoading = useAppSelector(selectIsLoading);
+  const isError = useAppSelector(selectIsError);
 
   useEffect(() => {
-    dispatch(fetchCamper(id));
+    if (id) {
+      dispatch(fetchCamper(id));
+    }
   }, [dispatch, id]);
 
   return (

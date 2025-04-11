@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const scrollSlice = createSlice({
   name: 'scroll',
   initialState: { scrollY: 0 },
   reducers: {
-    setScrollPosition: (state, action) => {
+    setScrollPosition: (state, action: PayloadAction<number>) => {
       state.scrollY = action.payload;
     },
   },

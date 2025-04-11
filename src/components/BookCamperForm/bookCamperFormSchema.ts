@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
+import { FormValues } from '../../../types/formValues';
 
-const bookCamperFormSchema = Yup.object().shape({
+const bookCamperFormSchema: Yup.ObjectSchema<FormValues> = Yup.object().shape({
   name: Yup.string()
     .min(2, 'The name is too short')
     .max(50, 'The name is too long')

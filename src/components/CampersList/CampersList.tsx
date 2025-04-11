@@ -1,7 +1,12 @@
+import { Camper } from '../../../types/camper';
 import CamperItem from '../CamperItem/CamperItem';
 import css from './CampersList.module.css';
 
-const CampersList = ({ campers }) => {
+interface CamperListProps {
+  campers: Camper[];
+}
+
+const CampersList = ({ campers }: CamperListProps) => {
   return (
     <ul className={css.list}>
       {campers.map(camper => (

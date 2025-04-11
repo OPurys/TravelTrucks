@@ -1,27 +1,34 @@
 import { Link, NavLink } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import css from './AppBar.module.css';
-import clsx from 'clsx';
+import { buildLinkClass } from '../../utils/buildLinkClass';
 
 const AppBar = () => {
-  const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
-  };
   return (
     <header className={css.wrapper}>
       <nav className={css.nav}>
         <Link className={css.logoLink} to="/">
-          <Icon id="logo" w="136" h="17" />
+          <Icon id="logo" w={136} h={17} />
         </Link>
 
         <ul className={css.linkList}>
           <li>
-            <NavLink className={buildLinkClass} to="/">
+            <NavLink
+              className={({ isActive }) =>
+                buildLinkClass({ isActive, styles: css })
+              }
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className={buildLinkClass} to="/catalog">
+            <NavLink
+              className={({ isActive }) =>
+                buildLinkClass({ isActive, styles: css })
+              }
+              to="/catalog"
+            >
               Catalog
             </NavLink>
           </li>
@@ -30,4 +37,5 @@ const AppBar = () => {
     </header>
   );
 };
+
 export default AppBar;

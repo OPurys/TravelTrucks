@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
 import Icon from '../Icon/Icon';
 import css from './BtnScrollUp.module.css';
 import { selectScrollY } from '../../redux/scrollUp/selectors';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Location } from 'react-router-dom';
+import { useAppSelector } from '../../redux/hooks';
 
 const BtnScrollUp = () => {
-  const scrollY = useSelector(selectScrollY);
-  const location = useLocation();
+  const scrollY = useAppSelector(selectScrollY);
+  const location: Location = useLocation();
 
   const allowedPaths = ['/catalog'];
 
@@ -22,7 +22,7 @@ const BtnScrollUp = () => {
         type="button"
         onClick={handleScrollToTop}
       >
-        <Icon className={css.iconArrowUp} id="arrow_up" w="20" h="20" />
+        <Icon className={css.iconArrowUp} id="arrow_up" w={20} h={20} />
       </button>
     )
   );

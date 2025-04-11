@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
 import CampersList from '../../components/CampersList/CampersList';
 import FilterBar from '../../components/FilterBar/FilterBar';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
@@ -18,16 +17,17 @@ import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { setScrollPosition } from '../../redux/scrollUp/slice';
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 const CatalogPage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const campers = useSelector(selectCampers);
-  const currentPage = useSelector(selectCurrentPage);
-  const totalItems = useSelector(selectTotalItems);
-  const params = useSelector(selectParams);
-  const isLoading = useSelector(selectIsLoading);
-  const isError = useSelector(selectIsError);
+  const campers = useAppSelector(selectCampers);
+  const currentPage = useAppSelector(selectCurrentPage);
+  const totalItems = useAppSelector(selectTotalItems);
+  const params = useAppSelector(selectParams);
+  const isLoading = useAppSelector(selectIsLoading);
+  const isError = useAppSelector(selectIsError);
 
   const limit = 4;
   const totalPages = Math.ceil(totalItems / limit);
@@ -45,7 +45,7 @@ const CatalogPage = () => {
     };
   }, [dispatch, currentPage, params]);
 
-  const handlePageChange = page => {
+  const handlePageChange = (page: number): void => {
     dispatch(setCurrentPage(page));
   };
 

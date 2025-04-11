@@ -1,7 +1,12 @@
 import Icon from '../Icon/Icon';
 import css from './VehicleListIcons.module.css';
+import { Camper } from '../../../types/camper';
 
-const VehicleListIcons = ({ camper }) => {
+interface VehicleListIconsProps {
+  camper: Camper | null;
+}
+
+const VehicleListIcons = ({ camper }: VehicleListIconsProps) => {
   return (
     <ul className={css.iconsList}>
       {camper?.engine && (

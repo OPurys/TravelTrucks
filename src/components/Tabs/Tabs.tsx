@@ -1,21 +1,27 @@
 import { NavLink } from 'react-router-dom';
 import css from './Tabs.module.css';
-import clsx from 'clsx';
+import { buildLinkClass } from '../../utils/buildLinkClass';
 
 const Tabs = () => {
-  const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
-  };
-
   return (
     <ul className={css.linkList}>
       <li>
-        <NavLink to="features" className={buildLinkClass}>
+        <NavLink
+          to="features"
+          className={({ isActive }) =>
+            buildLinkClass({ isActive, styles: css })
+          }
+        >
           Features
         </NavLink>
       </li>
       <li>
-        <NavLink to="reviews" className={buildLinkClass}>
+        <NavLink
+          to="reviews"
+          className={({ isActive }) =>
+            buildLinkClass({ isActive, styles: css })
+          }
+        >
           Reviews
         </NavLink>
       </li>

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import { ChildrenProps } from '../../../types/childrenProps';
 
-const DocumentTitle = ({ children }) => {
+const DocumentTitle = ({ children }: ChildrenProps) => {
   return (
     <Helmet>
       <title>{children}</title>

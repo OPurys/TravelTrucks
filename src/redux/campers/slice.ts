@@ -1,7 +1,18 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf, PayloadAction } from '@reduxjs/toolkit';
 import { fetchAllCampers, fetchCamper } from './operations';
+import { Camper } from '../../../types/camper';
 
-const initialState = {
+interface CampersState {
+  items: Camper[];
+  camperDetails: Camper | null;
+  currentPage: number;
+  params: string;
+  totalItems: number;
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: CampersState = {
   items: [],
   camperDetails: null,
   currentPage: 1,
@@ -15,10 +26,10 @@ const campersSlice = createSlice({
   name: 'campers',
   initialState,
   reducers: {
-    setCurrentPage: (state, action) => {
+    setCurrentPage: (state, action: PayloadAction<number>) => {
       state.currentPage = action.payload;
     },
-    setParams: (state, action) => {
+    setParams: (state, action: PayloadAction<string>) => {
       state.currentPage = initialState.currentPage;
       state.params = action.payload;
     },
@@ -52,7 +63,7 @@ const campersSlice = createSlice({
         isAnyOf(fetchAllCampers.rejected, fetchCamper.rejected),
         (state, action) => {
           state.loading = false;
-          state.error = action.payload;
+          state.error = (action.payload as string) ?? 'Unexpected error';
         }
       );
   },

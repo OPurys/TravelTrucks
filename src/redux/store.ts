@@ -13,6 +13,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { FavoritesState } from '../../types/favoritesState';
 
 const persistConfig = {
   key: 'favorites',
@@ -23,7 +24,7 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     campers: campersReducer,
-    favorites: persistReducer(persistConfig, favoritesReducer),
+    favorites: persistReducer<FavoritesState>(persistConfig, favoritesReducer),
     scroll: scrollReducer,
   },
   middleware: getDefaultMiddleware =>
@@ -34,4 +35,6 @@ export const store = configureStore({
     }),
 });
 
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 export const persistor = persistStore(store);
